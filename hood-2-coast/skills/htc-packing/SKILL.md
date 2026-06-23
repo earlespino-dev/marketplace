@@ -1,12 +1,23 @@
 ---
 name: htc-packing
-description: Produce a personalized Hood to Coast / Portland to Coast packing list — what to bring for the van, for each of the runner's three legs, for night running, and for the overnight/coast portions. Tunes the official handbook packing list to the runner's legs (e.g. bandana for dusty gravel legs), the night-gear requirements, and the expected weather. Use when asked what to pack, what to buy/bring, what gear is needed, whether to bring a sleeping bag, or to build a checklist before the race.
+description: Produce a personalized Hood to Coast / Portland to Coast packing list — what to bring for the van, for each of the runner's three legs, for night running, and for the overnight/coast portions. Tunes the official handbook packing list to the runner's legs (e.g. bandana for dusty gravel legs), the night-gear requirements, and the expected weather. Use when asked what to pack, what to buy/bring, what gear is needed, whether to bring a sleeping bag, or to build a checklist before the race. If no runner config exists, defers to htc-setup before building a personalized list (or gives the generic handbook list on request).
 ---
 
 # HTC Packing List
 
 Builds a packing list grounded in the official handbook list, then personalizes it to the
 runner's legs and conditions.
+
+## Step 0: Check for a runner config
+
+Before building the list, check for a runner config at `<vault_path>/htc-trainer-config.md`.
+
+- A genuinely **personalized** list depends on the runner's legs (gravel/night), location, and
+  weather. If **no config exists**, run **htc-setup** first (it captures runner number, team
+  size, legs, and location), then resume — otherwise you can't tune for gravel/night/heat.
+- If the runner only wants the **generic handbook list** or declines setup, give the baseline
+  list below and note once that htc-setup would let you personalize it (and is required by the
+  trainer skill anyway).
 
 ## Sources
 

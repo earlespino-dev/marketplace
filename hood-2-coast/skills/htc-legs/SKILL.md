@@ -1,12 +1,25 @@
 ---
 name: htc-legs
-description: Look up the profile of any Hood to Coast / Portland to Coast leg — distance, difficulty rating, elevation gain/loss and net, terrain/surface, gravel and night-leg flags, exchange details, GPS, and turn-by-turn directions. Use when asked "what's leg N like", "which of my legs is hardest", "show my route/directions", "how much climbing is on leg 20", or to compare a runner's three legs. Reads the transcribed leg table and the bundled 2026 HTC Handbook; does not need a saved config, but will use one if present to default to the runner's own three legs.
+description: Look up the profile of any Hood to Coast / Portland to Coast leg — distance, difficulty rating, elevation gain/loss and net, terrain/surface, gravel and night-leg flags, exchange details, GPS, and turn-by-turn directions. Use when asked "what's leg N like", "which of my legs is hardest", "show my route/directions", "how much climbing is on leg 20", or to compare a runner's three legs. Reads the transcribed leg table and the bundled 2026 HTC Handbook. Answers any leg-by-number lookup standalone (no config needed); for the runner's OWN legs, defers to htc-setup first when no saved config exists.
 ---
 
 # HTC Leg / Course Lookup
 
 Answers questions about specific legs or the course as a whole, grounded in real handbook data
 rather than memory.
+
+## Step 0: Check for a runner config
+
+Before answering, check whether a runner config exists at `<vault_path>/htc-trainer-config.md`
+(if you don't know the runner's vault path, that itself signals setup hasn't run yet).
+
+- If the request is about **the runner's own legs** ("my legs," "my hardest leg," "my route")
+  and **no config exists**, run **htc-setup** first so you actually know their runner number,
+  team size, and three legs — then resume here. Don't guess which legs are theirs.
+- If it's a **generic/public lookup** (any leg by number, "what's leg 20 like," comparing
+  arbitrary legs), answer standalone from the data sources below — no config needed — but
+  mention once that running **htc-setup** personalizes this and unlocks the training and packing
+  skills.
 
 ## Data sources (in order)
 
