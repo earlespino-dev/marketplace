@@ -67,6 +67,26 @@ the other two. If Strava shows an imbalance (hardest leg is a climb but no hill 
 correct toward it. If the runner's home is flat and lacks their race terrain, say so and suggest
 the best local substitute (parking-garage ramps, bridges, treadmill incline, nearest trail).
 
+### Where to run (locations & routes)
+
+When the runner asks where to run — or when today's workout needs specific terrain and you want
+to point them somewhere concrete — **consult Strava first**, in this order:
+
+1. `get_athlete_profile` → anchor on the runner's location.
+2. `list_activities` with `include_polyline: true` (recent range) → find routes/spots they
+   already run, so you can recommend a real, familiar route by name/landmark.
+3. When the workout needs particular terrain (e.g. hills for leg 20), optionally
+   `get_activity_streams` (`location`, `altitude`, `grade_smooth`) on a candidate past activity
+   to confirm it matches — e.g. "your Tuesday park loop has the rolling climb you need."
+
+Prefer recommending routes the runner has already run. Note: this uses the runner's own past
+tracks + profile location — Strava's saved "Routes" and segment search aren't available on this
+MCP, and reduced polylines are good for "which area/route," not turn-by-turn.
+
+**Web fallback is on request only.** Do *not* automatically search the web for places to run. If
+Strava is unavailable or its history doesn't cover what's needed, say so and *offer* a web search
+for local trails/routes near their location — only run it if the runner asks for it.
+
 ### Build in real recovery — don't write a hard day every day
 
 Check Strava for the last 2–3 days before setting today's intensity:
@@ -125,7 +145,8 @@ the note when the request implies saving, which is the default given setup; chec
 ## Edge cases
 
 - **No Strava data:** don't block — plan from weather + leg data + phase; ask once for training
-  background.
+  background. For "where to run" requests with no Strava history, *offer* a web search for local
+  routes rather than running one automatically (see "Where to run").
 - **Injury/soreness/fatigue mentioned in the prompt:** overrides the computed phase — adjust
   down and say so. (Several teammates have run on niggles/Achilles/back issues — err cautious.)
 - **Weather makes terrain work unsafe** (thunderstorms, heat advisory): substitute indoor/
