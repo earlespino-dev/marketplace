@@ -1,6 +1,6 @@
 {
   "name": "hood-2-coast",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Skills for training for and running the Hood To Coast / Portland To Coast relay \u2014 daily training plans, leg/course lookup, packing, race rules, and team/van logistics. Grounded in the bundled 2026 HTC Handbook and a per-runner + per-team config saved in the runner's Obsidian vault.",
   "author": {
     "name": "Earl Espino"

@@ -37,6 +37,15 @@ traveling). Weather changes the plan for concrete reasons:
   35, 36).
 - Wind, temperature swings, and daylight window shift whether the run happens AM/midday/evening.
 
+**When to run (use the runner's saved preference as the default).** If the config tracks run
+times (`tracks_run_times: true`), default the suggested time to the runner's **weekday** window
+for a Mon–Fri plan or their **weekend** window for a Sat–Sun plan — so the recommendation fits
+around their work schedule or weekend plans — and state that time in the plan. Treat it as a
+**soft default**: weather safety (heat advisory, storms) and leg-specificity (an occasional
+condition-matched night/low-light session for a night leg) can override it, but say so in one
+line when you diverge (e.g. "shifted earlier than your usual evening run because of the heat").
+If run times aren't tracked, choose the window from weather/daylight as usual.
+
 Late-August Oregon priors worth knowing: rain is usually low (a passing sprinkle at most), but
 heat is highly variable — recent years have ranged from a wet weekend to the hottest on record
 (low 100s midday). Watch the actual forecast in the weeks before the race.

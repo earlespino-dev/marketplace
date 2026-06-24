@@ -43,6 +43,13 @@ authoritative.
    say so plainly if that's not the case.
 6. **Shoe rotation** (optional) — only if they want shoe recommendations. If yes, get each shoe
    and its role (daily trainer, tempo, trail/gravel, race day). Skip entirely if they decline.
+7. **Preferred running times** (optional) — ask two separate questions so htc-trainer can time
+   its recommendations around the runner's life:
+   - *"When do you usually run on **weekdays**?"* — the window that fits around their work
+     schedule (e.g. early morning before work, lunch, after-work evening).
+   - *"When do you usually run on **weekends**?"* — the window that fits their weekend plans
+     (e.g. mid-morning, flexible).
+   Accept free-form answers; either can be left blank. Skip the whole item if they don't care.
 
 ## Deriving the three legs
 
